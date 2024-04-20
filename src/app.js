@@ -18,9 +18,9 @@ const secretKey = "zrc";
 server.use(express.static(path.join(__dirname, "dist")));
 
 const db = mysql.createConnection({
-  host     : 'sql12.freemysqlhosting.net',
-  user     : 'sql12628553',
-  password : 'zLJ6cKrMxy',
+  host     : 'localhost',
+  user     : 'dheeraj',
+  password : 'Shan@g2020',
   database : 'sql12628553',
 });
 console.log("ZRC APP");
