@@ -149,6 +149,18 @@ const userMiddleware = (req, res, next) => {
     res.status(403).json({ message: "Access Denied" });
   }
 };
+const pingInterval = 5 * 60 * 1000; // Ping every 5 minutes
+setInterval(() => {
+  db.query('SELECT 1', (error, results, fields) => {
+    if (error) {
+      console.error('Error pinging database:', error);
+      // Handle error: attempt to reconnect or notify system administrator
+    } else {
+      console.log('Database ping successful');
+    }
+  });
+}, pingInterval);
+
 
 //User Registration
 
